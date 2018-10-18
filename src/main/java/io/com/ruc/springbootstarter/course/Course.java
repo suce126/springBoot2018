@@ -4,6 +4,8 @@ import io.com.ruc.springbootstarter.topic.Topic;
 
 import javax.persistence.*;
 
+
+//This is a github demo.
 @Entity
 public class Course {
 
@@ -76,7 +78,7 @@ public class Course {
         return topic;
     }
 
-    public void setTopic(Topic topic) {
+    private void setTopic(Topic topic) {
         this.topic = topic;
     }
 
@@ -86,9 +88,9 @@ public class Course {
 
 
     /**
-     * @param id
-     * @param name
-     * @param description
+     * @param id This
+     * @param name This
+     * @param description This
      */
     public Course(String id, String name, String description, String topicId) {
         super();
