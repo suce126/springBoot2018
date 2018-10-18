@@ -9,8 +9,5 @@
         <module name="springBoot2018" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="springBoot2018" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
 </project>
