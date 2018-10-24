@@ -78,7 +78,7 @@ public class Course {
         return topic;
     }
 
-    private void setTopic(Topic topic) {
+    public void setTopic(Topic topic) {
         this.topic = topic;
     }
 
