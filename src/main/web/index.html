@@ -4,11 +4,45 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <meta charset="UTF-8">
     <title>RUC course registration</title>
 </head>
 <body>
 <div id="root"></div>
 <script src="index.js"></script>
+<div  class="sixCl wide field js_query_seq">  
+         <label>Course Name</label>  
+         <input type="text"  maxlength="50"  name="courseName"  id="orderNo"  placeholder="">  
+</div>
+
+<select name="courseList" id="select4course">
+    <option value="">Please select</option>
+</select>
 </body>
 </html>
+<script>
+    $(document).ready(function () {
+
+        var url = "jdbc:mysql://localhost:3306/course_crud?useSSL=true";
+        $.ajax({
+            type: "get",
+            url: url,//访问后台去数据库查询select的选项
+            success: function (topic) {
+                var unitObj = document.getElementById("select4course"); //页面上的<html:select>元素
+                if (topic != null) { //后台传回来的select选项
+                    for (var i = 0; i < topic.length; i++) {
+                        //遍历后台传回的结果，一项项往select中添加option
+                        unitObj.options.add(new Option(topic[i].name, topic[i].name));
+                    }
+                }
+            },
+            error: function () {
+                alert('Error');
+            }
+        })
+
+    })
+</script>
+
+
